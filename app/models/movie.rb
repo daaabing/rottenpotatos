@@ -4,9 +4,9 @@ class Movie < ActiveRecord::Base
   #  movies with those ratings
   # if ratings_list is nil, retrieve ALL movies
     if ratings_list == nil
-      return Movie.all
+      return self.all
     end
-    Movie.where(ratings: ratings_list)
+    self.where(rating: ratings_list)
   end
   
   def self.all_ratings()
